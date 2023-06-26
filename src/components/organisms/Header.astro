@@ -1,0 +1,42 @@
+<script>
+  const header = document.querySelector(".Header");
+
+  document.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      console.log("ok");
+      header.classList.remove("border-transparent");
+      header.classList.add("border-b-gray-50", "bg-white", "shadow-sm");
+    } else {
+      console.log("woke");
+      header.classList.remove("border-b-gray-50", "bg-white", "shadow-sm");
+      header.classList.add("border-transparent");
+    }
+  });
+</script>
+
+<header
+  class="Header fixed inset-0 z-50 flex h-20 w-full border-b border-transparent"
+>
+  <div
+    class="container mx-auto flex max-w-screen-xl items-center justify-between px-20"
+  >
+    <a class="text-xl" href="/">
+      jari<span class="font-bold">telunjuk--</span>
+    </a>
+
+    <nav class="flex items-center gap-6">
+      <div class="flex items-center gap-8">
+        <a class="text-base leading-5" href="/">About</a>
+        <a class="text-base leading-5" href="/">Blog</a>
+        <a class="text-base leading-5" href="/">Sign In</a>
+      </div>
+
+      <a
+        href="/"
+        class="rounded-full bg-green-600 px-5 py-2 font-bold leading-5 text-white"
+      >
+        Sign Up
+      </a>
+    </nav>
+  </div>
+</header>
