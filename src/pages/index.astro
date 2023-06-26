@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Discover books you’ll love!">
-  <section class="mt-32">
+  <section class="relative mt-32 overflow-hidden">
     <div
       class="container mx-auto flex max-w-screen-xl flex-col items-center px-20 text-center"
     >
@@ -16,5 +16,112 @@ import Layout from "../layouts/Layout.astro";
         suggestions for what to read next.
       </p>
     </div>
+
+    <section class="relative flex w-full scale-110 items-center gap-6">
+      <div
+        id="overlay"
+        class="absolute left-0 top-0 z-50 h-full w-full bg-gradient-to-t from-stone-300 to-stone-50/25"
+      >
+      </div>
+
+      <section class="-mb-24 flex w-full items-center gap-6">
+        <div class="flex w-1/5 flex-col items-start gap-6">
+          <div class="relative h-auto w-full">
+            <img
+              class="h-full w-full object-cover object-top"
+              src={`/book-photo-${1}.png`}
+              alt={`Book Photo ${1}`}
+            />
+          </div>
+          <div class="relative h-auto w-full">
+            <img
+              class="h-full w-full object-cover object-top"
+              src={`/book-photo-${2}.png`}
+              alt={`Book Photo ${2}`}
+            />
+          </div>
+        </div>
+
+        <div class="mt-32 flex w-1/5 flex-col items-start gap-6">
+          <div class="relative h-auto w-full">
+            <img
+              class="h-full w-full object-cover object-top"
+              src={`/book-photo-${3}.png`}
+              alt={`Book Photo ${3}`}
+            />
+          </div>
+          <div class="relative h-auto w-full">
+            <img
+              class="h-full w-full object-cover object-top"
+              src={`/book-photo-${4}.png`}
+              alt={`Book Photo ${4}`}
+            />
+          </div>
+        </div>
+
+        <div class="mt-56 flex w-1/5 flex-col items-start gap-6">
+          <div class="relative h-auto w-full">
+            <img
+              class="h-full w-full object-cover object-top"
+              src={`/book-photo-${5}.png`}
+              alt={`Book Photo ${5}`}
+            />
+          </div>
+          <div class="relative h-auto w-full">
+            <img
+              class="h-full w-full object-cover object-top"
+              src={`/book-photo-${6}.png`}
+              alt={`Book Photo ${6}`}
+            />
+          </div>
+        </div>
+
+        <div class="mt-32 flex w-1/5 flex-col items-start gap-6">
+          <div class="relative h-auto w-full">
+            <img
+              class="h-full w-full object-cover object-top"
+              src={`/book-photo-${7}.png`}
+              alt={`Book Photo ${7}`}
+            />
+          </div>
+          <div class="relative h-auto w-full">
+            <img
+              class="h-full w-full object-cover object-top"
+              src={`/book-photo-${8}.png`}
+              alt={`Book Photo ${8}`}
+            />
+          </div>
+        </div>
+
+        <div class="flex w-1/5 flex-col items-start gap-6">
+          <div class="relative h-auto w-full">
+            <img
+              class="h-full w-full object-cover object-top"
+              src={`/book-photo-${9}.png`}
+              alt={`Book Photo ${9}`}
+            />
+          </div>
+          <div class="relative h-auto w-full">
+            <img
+              class="h-full w-full object-cover object-top"
+              src={`/book-photo-${10}.png`}
+              alt={`Book Photo ${10}`}
+            />
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="relative w-full bg-[#F9F8F6] py-24"></section>
   </section>
 </Layout>
+
+<style>
+  #overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(249, 248, 246, 0) 0%,
+      #f9f8f6 100%
+    );
+  }
+</style>
