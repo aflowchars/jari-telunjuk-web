@@ -2,7 +2,7 @@
   const header = document.querySelector(".Header");
 
   document.addEventListener("scroll", () => {
-    if (window.scrollY > 200) {
+    if (window.scrollY > 160) {
       console.log("ok");
       header.classList.remove("border-transparent");
       header.classList.add("border-b-gray-50", "bg-white", "shadow-sm");
@@ -15,14 +15,24 @@
 </script>
 
 <header
-  class="Header fixed inset-0 z-50 flex h-20 w-full border-b border-transparent"
+  class="Header fixed inset-0 z-50 flex h-20 w-full border-b border-transparent transition-all duration-300 ease-out"
 >
   <div
     class="container mx-auto flex max-w-screen-xl items-center justify-between px-12"
   >
-    <a class="text-xl" href="/">
-      jari<span class="font-bold">telunjuk--</span>
-    </a>
+    <nav class="flex items-center gap-8">
+      <a class="text-xl" href="/">
+        jari<span class="font-bold">telunjuk--</span>
+      </a>
+
+      <div class="relative w-72">
+        <input
+          class="w-full rounded-full border border-[#DEDEDE] px-6 py-2 text-sm text-[#DEDEDE] outline-none ring-2 ring-transparent focus:border-stone-300 focus:ring-[#DEDEDE]/25"
+          type="text"
+          placeholder="Cari buku..."
+        />
+      </div>
+    </nav>
 
     <nav class="flex items-center gap-6">
       <div class="flex items-center gap-8">
