@@ -1,13 +1,14 @@
 <script>
   const header = document.querySelector(".Header");
-
+  console.log(window.location.pathname);
   document.addEventListener("scroll", () => {
     if (window.scrollY > 160) {
-      console.log("ok");
+      header.classList.remove("border-transparent");
+      header.classList.add("border-b-gray-50", "bg-white", "shadow-sm");
+    } else if (window.location.pathname == "/detail" && window.scrollY > 10) {
       header.classList.remove("border-transparent");
       header.classList.add("border-b-gray-50", "bg-white", "shadow-sm");
     } else {
-      console.log("woke");
       header.classList.remove("border-b-gray-50", "bg-white", "shadow-sm");
       header.classList.add("border-transparent");
     }
