@@ -7,11 +7,17 @@ dependencies:
   astro:
     specifier: ^2.7.0
     version: 2.7.0
+  micromodal:
+    specifier: ^0.4.10
+    version: 0.4.10
   tailwindcss:
     specifier: ^3.0.24
     version: 3.3.2
 
 devDependencies:
+  '@types/micromodal':
+    specifier: ^0.3.3
+    version: 0.3.3
   prettier:
     specifier: ^2.8.8
     version: 2.8.8
@@ -696,6 +702,10 @@ packages:
     dependencies:
       '@types/unist': 2.0.6
     dev: false
+
+  /@types/micromodal@0.3.3:
+    resolution: {integrity: sha512-XQg6nqg15A6ZKkMkDdqLkC5LTxLb7CZU6BX8uHBj4AVU7+k/W6kfriW5HCsarrjFpONNOMAmhA1ReUsMm7297g==}
+    dev: true
 
   /@types/ms@0.7.31:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
@@ -2271,6 +2281,11 @@ packages:
     dependencies:
       braces: 3.0.2
       picomatch: 2.3.1
+    dev: false
+
+  /micromodal@0.4.10:
+    resolution: {integrity: sha512-BUrEnzMPFBwK8nOE4xUDYHLrlGlLULQVjpja99tpJQPSUEWgw3kTLp1n1qv0HmKU29AiHE7Y7sMLiRziDK4ghQ==}
+    engines: {node: '>=10'}
     dev: false
 
   /mime@3.0.0:

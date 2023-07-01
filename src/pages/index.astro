@@ -1,15 +1,74 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const listItem = [
+  "Art",
+  "Biography",
+  "Business",
+  "Children’s",
+  "Christian",
+  "Classics",
+  "Comics",
+  "Cookbooks",
+  "Ebooks",
+  "Fantasy",
+  "Fiction",
+  "Graphic Noverls",
+  "Historical Fiction",
+  "History",
+  "Horror",
+  "Memoir",
+  "Music",
+  "Mystery",
+  "Nonfiction",
+  "Poetry",
+  "Psychology",
+  "Romance",
+  "Science",
+  "Science Fiction",
+  "Self Help",
+  "Sports",
+  "Thriller",
+  "Travel",
+  "Young Adult",
+];
 ---
 
-<script type="module">
+<script>
   import MicroModal from "micromodal";
 
-  MicroModal.init();
+  MicroModal.init({
+    onShow: (modal) => console.info(`${modal.id} is shown`), // [1]
+    onClose: (modal) => console.info(`${modal.id} is hidden`), // [2]
+    openTrigger: "data-custom-open", // [3]
+    closeTrigger: "data-custom-close", // [4]
+    openClass: "is-open", // [5]
+    disableScroll: true, // [6]
+    disableFocus: false, // [7]
+    awaitOpenAnimation: false, // [8]
+    awaitCloseAnimation: false, // [9]
+    debugMode: true, // [10]
+  });
+
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      MicroModal.show("modal-1");
+    }, 5000);
+  });
 </script>
 
 <Layout title="Discover books you’ll love!">
   <section class="relative mt-32 overflow-hidden">
+    <a
+      href="#"
+      micromodal-trigger
+      data-micromodal-trigger="modal-1"
+      id="open-modal"
+      class="rounded-large hover:bg-primary-1/5 bg-stone-100 px-5 py-2.5 text-sm font-medium"
+    >
+      Bisnis Saya
+    </a>
+
     <div
       class="container mx-auto flex max-w-screen-xl flex-col items-center px-12 text-center"
     >
@@ -313,8 +372,8 @@ import Layout from "../layouts/Layout.astro";
           <nav class="flex flex-col items-start gap-3">
             <a class="text-[#128C55] hover:underline" href="/Ebooks">Ebooks</a>
             <a class="text-[#128C55] hover:underline" href="/Mystery">
-              Mystery
-            </a>
+              Mystery</a
+            >
             <a class="text-[#128C55] hover:underline" href="/Nonfiction">
               Nonfiction
             </a>
@@ -323,8 +382,8 @@ import Layout from "../layouts/Layout.astro";
               Psychology
             </a>
             <a class="text-[#128C55] hover:underline" href="/Romance">
-              Romance
-            </a>
+              Romance</a
+            >
             <a class="text-[#128C55] hover:underline" href="/Science">
               Science</a
             >
@@ -340,11 +399,11 @@ import Layout from "../layouts/Layout.astro";
           <nav class="flex flex-col items-start gap-3">
             <a class="text-[#128C55] hover:underline" href="/Music">Music</a>
             <a class="text-[#128C55] hover:underline" href="/Fantasy">
-              Fantasy
-            </a>
+              Fantasy</a
+            >
             <a class="text-[#128C55] hover:underline" href="/Fiction">
-              Fiction
-            </a>
+              Fiction</a
+            >
             <a class="text-[#128C55] hover:underline" href="/Graphic Novels">
               Graphic Novels
             </a>
@@ -355,8 +414,8 @@ import Layout from "../layouts/Layout.astro";
               Historical Fiction
             </a>
             <a class="text-[#128C55] hover:underline" href="/History">
-              History
-            </a>
+              History</a
+            >
             <a class="text-[#128C55] hover:underline" href="/Horror"> Horror</a>
             <a
               class="text-[#128C55] hover:underline"
@@ -563,25 +622,69 @@ import Layout from "../layouts/Layout.astro";
         aria-modal="true"
         aria-labelledby="modal-1-title"
       >
-        <header class="modal__header">
-          <h2 class="modal__title" id="modal-1-title">Micromodal</h2>
-          <button
-            class="modal__close"
-            aria-label="Close modal"
-            data-micromodal-close></button>
+        <header class="mb-6 mt-11 flex justify-center">
+          <h2
+            class="text-center font-arvo text-[34px] leading-none"
+            id="modal-1-title"
+          >
+            Pilih rekomendasi
+          </h2>
         </header>
-        <main class="modal__content" id="modal-1-content">
-          <p>
-            Try hitting the <code>tab</code> key and notice how the focus stays within
-            the modal itself. Also, <code>esc</code> to close modal.
-          </p>
+        <main
+          class="modal__content px-8 !font-source-sans"
+          id="modal-1-content"
+        >
+          <div class="flex flex-wrap items-center justify-center gap-3">
+            <ul class="flex w-full flex-row flex-wrap gap-3">
+              {
+                listItem.map((item) => {
+                  return (
+                    <li>
+                      <input
+                        type="checkbox"
+                        id={item}
+                        value=""
+                        class="peer hidden"
+                        required=""
+                      />
+                      <label
+                        for={item}
+                        class="inline-flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border border-[#EBEBEB] bg-white p-4 text-gray-500 hover:bg-gray-50 hover:text-gray-600 peer-checked:border-[#128C55] peer-checked:text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:peer-checked:text-gray-300"
+                      >
+                        <div class="w-full text-lg font-semibold">{item}</div>
+                        <svg
+                          class="flex-shrink-0"
+                          width="16"
+                          height="20"
+                          viewBox="0 0 16 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 2C3.58853 2 0 5.58853 0 10C0 14.4115 3.58853 18 8 18C12.4115 18 16 14.4108 16 10C16 5.58916 12.4115 2 8 2ZM8 16.7607C4.27266 16.7607 1.23934 13.728 1.23934 10C1.23934 6.27203 4.27266 3.23934 8 3.23934C11.7273 3.23934 14.7607 6.27203 14.7607 10C14.7607 13.728 11.728 16.7607 8 16.7607Z"
+                            fill="#515151"
+                          />
+                          <path
+                            d="M11.0987 9.32457H8.61998V6.84588C8.61998 6.50382 8.34298 6.2262 8.00029 6.2262C7.6576 6.2262 7.3806 6.50382 7.3806 6.84588V9.32457H4.90191C4.55923 9.32457 4.28223 9.6022 4.28223 9.94426C4.28223 10.2863 4.55923 10.5639 4.90191 10.5639H7.3806V13.0426C7.3806 13.3847 7.6576 13.6623 8.00029 13.6623C8.34298 13.6623 8.61998 13.3847 8.61998 13.0426V10.5639H11.0987C11.4414 10.5639 11.7184 10.2863 11.7184 9.94426C11.7184 9.6022 11.4414 9.32457 11.0987 9.32457Z"
+                            fill="#515151"
+                          />
+                        </svg>
+                      </label>
+                    </li>
+                  );
+                })
+              }
+            </ul>
+          </div>
         </main>
-        <footer class="modal__footer">
-          <button class="modal__btn modal__btn-primary">Continue</button>
+        <footer
+          class="flex items-center justify-between bg-[#F9F8F6] px-8 py-12"
+        >
+          <button class="text-2xl font-bold leading-7">0/5</button>
           <button
-            class="modal__btn"
+            class="rounded-full bg-[#128C55] px-6 py-4 font-source-sans text-base font-semibold leading-none tracking-widest text-white"
             data-micromodal-close
-            aria-label="Close this dialog window">Close</button
+            aria-label="Close this dialog window">Selesai</button
           >
         </footer>
       </div>
@@ -614,14 +717,15 @@ import Layout from "../layouts/Layout.astro";
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 9999;
   }
 
   .modal__container {
     background-color: #fff;
-    padding: 30px;
-    max-width: 500px;
+    max-width: 910px;
     max-height: 100vh;
-    border-radius: 4px;
+    width: 100%;
+    border-radius: 16px;
     overflow-y: auto;
     box-sizing: border-box;
   }
@@ -630,6 +734,7 @@ import Layout from "../layouts/Layout.astro";
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 44px;
   }
 
   .modal__title {
@@ -698,7 +803,7 @@ import Layout from "../layouts/Layout.astro";
   }
 
   /**************************\
-  Demo Animation Style
+Demo Animation Style
 \**************************/
   @keyframes mmfadeIn {
     from {
