@@ -25,7 +25,7 @@ import Layout from "@/layouts/Layout.astro";
               [1, 2, 3, 4, 5, 6].map((item) => {
                 return (
                   <figure class="group relative flex w-full items-start gap-8">
-                    <a class="absolute z-10 h-full w-full" href="/" />
+                    <a class="absolute z-10 h-full w-full" href="/detail" />
 
                     <img
                       class="aspect-video h-auto w-full max-w-full rounded-md"
@@ -107,6 +107,38 @@ import Layout from "@/layouts/Layout.astro";
           </div>
         </section>
       </div>
+
+      <section class="my-20 flex w-full flex-col items-center gap-10">
+        <h3 class="text-center font-arvo text-[34px] leading-none">
+          Kategori Blog
+        </h3>
+
+        <div class="grid w-full grid-cols-3 gap-5">
+          {
+            [1, 2, 3, 4, 5, 6].map((item) => {
+              return (
+                <figure class="group relative h-96 w-full overflow-hidden rounded-md border border-[#DCDCDC]">
+                  <a
+                    href="/"
+                    class="absolute z-20 h-full w-full object-cover"
+                  />
+                  <div class="absolute inset-0 z-10 flex h-full w-full flex-col items-start justify-end gap-2 bg-gradient-to-t from-white via-stone-50/75 to-stone-200/25 object-cover p-5">
+                    <h5 class="text-xl font-semibold leading-[26px] group-hover:underline">
+                      Self Improvement
+                    </h5>
+                    <p class="text-base leading-5 text-[#2e2e2e]">12 Blog</p>
+                  </div>
+                  <img
+                    class="h-full w-full object-cover"
+                    src={`/category-${item}.png`}
+                    alt={`Category ${item}`}
+                  />
+                </figure>
+              );
+            })
+          }
+        </div>
+      </section>
     </div>
   </main>
 </Layout>
