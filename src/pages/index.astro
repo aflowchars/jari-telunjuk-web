@@ -243,7 +243,7 @@ const listItem = [
           class="relative grid w-full grid-cols-2 gap-x-4 gap-y-6 xl:grid-cols-4 xl:gap-16"
         >
           <svg
-            class="absolute -bottom-20 -z-0 h-auto w-full"
+            class="absolute -bottom-20 -z-0 hidden h-auto w-full xl:block"
             viewBox="0 0 817 279"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -253,6 +253,21 @@ const listItem = [
               stroke="#242424"
               stroke-opacity="0.8"
               stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+
+          <svg
+            class="absolute -bottom-20 left-1/2 -z-0 block h-full w-auto -translate-x-1/2 xl:hidden"
+            viewBox="0 0 220 414"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 44.6908C40.7218 26.4563 66.0698 11.654 119.048 17.169C172.026 22.6841 232.841 101.848 201.369 180.064C169.897 258.279 43.3331 176.053 27.2587 231.204C11.1843 286.356 190.449 225.757 117.406 310.218C101.54 328.564 98.391 327.376 108.543 372.5"
+              stroke="#242424"
+              stroke-opacity="0.8"
+              stroke-width="3"
               stroke-linecap="round"
               stroke-linejoin="round"></path>
           </svg>
@@ -349,7 +364,11 @@ const listItem = [
 
     <section class="CATEGORIES relative w-full py-24">
       <div class="container mx-auto max-w-screen-xl space-y-9 px-4 xl:px-12">
-        <h3 class="mb-9 font-arvo text-[34px] leading-none">Kategori Buku</h3>
+        <h3
+          class="mb-9 text-center font-arvo text-2xl leading-7 xl:text-left xl:text-[34px] xl:leading-none"
+        >
+          Kategori Buku
+        </h3>
 
         <div
           class="flex flex-wrap items-start justify-between gap-8 xl:items-center"
@@ -608,8 +627,10 @@ const listItem = [
       <div
         class="container mx-auto max-w-screen-xl space-y-6 px-4 xl:space-y-20 xl:px-12"
       >
-        <h3 class="text-center font-arvo text-[34px] leading-none">
-          Benefit Jari Telunjuk
+        <h3
+          class="text-center font-arvo text-2xl leading-7 xl:text-left xl:text-[34px] xl:leading-none"
+        >
+          Blog Post
         </h3>
 
         <div class="grid grid-cols-2 gap-5 xl:grid-cols-3">
@@ -650,7 +671,7 @@ const listItem = [
         <div class="flex w-full justify-center">
           <a
             href="/"
-            class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-4 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90"
+            class="flex w-60 items-center justify-center rounded-full bg-[#128C55] px-6 py-3 font-bold text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90 xl:py-4"
           >
             Semua Blog
           </a>
