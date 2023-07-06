@@ -1,19 +1,4 @@
 <script>
-  const header = document.querySelector(".Header");
-
-  document.addEventListener("scroll", () => {
-    if (window.scrollY > 160) {
-      header.classList.remove("border-transparent");
-      header.classList.add("border-b-gray-50", "bg-white", "shadow-sm");
-    } else if (window.location.pathname == "/detail" && window.scrollY > 10) {
-      header.classList.remove("border-transparent");
-      header.classList.add("border-b-gray-50", "bg-white", "shadow-sm");
-    } else {
-      header.classList.remove("border-b-gray-50", "bg-white", "shadow-sm");
-      header.classList.add("border-transparent");
-    }
-  });
-
   const search_icon = document.querySelector(".search_icon");
   const search_section = document.querySelector("#search-section");
   const search_cancel = document.querySelector("#search-cancel");
@@ -55,7 +40,7 @@
 </script>
 
 <header
-  class="Header fixed inset-0 z-50 flex h-14 w-full border-b border-transparent transition-all duration-300 ease-out xl:h-20"
+  class="Header fixed border-b-gray-50 bg-white shadow-sm inset-0 z-50 flex h-14 w-full border-b transition-all duration-300 ease-out xl:h-20"
 >
   <div
     class="container mx-auto flex max-w-screen-xl items-center justify-between px-4 xl:px-12"
