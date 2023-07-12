@@ -3,14 +3,14 @@ import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout title="Detail Blog">
-  <main class="relative min-h-screen w-full pb-16 pt-28">
-    <div class="container mx-auto max-w-screen-xl px-12">
-      <div class="relative grid grid-cols-12 gap-10">
+  <main class="relative min-h-screen w-full pb-10 pt-20 xl:pb-16 xl:pt-28">
+    <div class="container mx-auto max-w-screen-xl px-4 xl:px-12">
+      <div class="relative grid grid-cols-1 gap-10 xl:grid-cols-12">
         <section
-          class="relative col-span-8 flex min-h-screen items-start gap-8"
+          class="relative col-span-1 flex min-h-screen items-start gap-8 xl:col-span-8"
         >
           <section
-            class="sticky left-0 top-24 flex w-full flex-col items-center gap-5"
+            class="hidden w-full flex-col items-center gap-5 xl:sticky xl:left-0 xl:top-24 xl:flex"
           >
             <div class="relative h-auto w-full">
               <img
@@ -121,11 +121,22 @@ import Layout from "@/layouts/Layout.astro";
             </div>
           </section>
 
-          <div class="space-y-3">
-            <h1 class="font-arvo text-[34px] leading-none">
+          <div class="flex flex-col items-center space-y-3 xl:items-start">
+            <div class="relative mb-3 block h-auto w-40 xl:hidden">
+              <img
+                class="h-full w-full object-cover"
+                src="/book-photo-5.png"
+                alt="Book 5"
+              />
+            </div>
+
+            <h1
+              class="w-80 text-center font-arvo text-2xl leading-7 xl:w-full xl:text-start xl:text-[34px] xl:leading-none"
+            >
               The Subtle Art of Not Giving A Fuck
             </h1>
-            <p class="text-lg font-semibold">
+
+            <p class="text-sm font-semibold xl:text-lg">
               by <a class="hover:underline" href="/">Mark Manson</a>
             </p>
 
@@ -153,7 +164,24 @@ import Layout from "@/layouts/Layout.astro";
               <p>5/5</p>
             </div>
 
-            <div class="flex items-center gap-3 border-b border-[#dcdcdc] pb-8">
+            <div
+              class="flex w-full items-center justify-center gap-3 xl:hidden"
+            >
+              <a
+                href="/"
+                class="w-60 rounded-full bg-[#128C55] px-5 py-3 text-center text-base leading-6 text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90"
+              >
+                Buy this book ?
+              </a>
+            </div>
+
+            <div class="block w-full pb-3 pt-4 xl:hidden">
+              <div class="h-px w-full bg-[#DCDCDC]"></div>
+            </div>
+
+            <div
+              class="hidden items-center gap-3 border-b border-[#dcdcdc] pb-8 xl:flex"
+            >
               <a
                 href="/"
                 class="rounded-full bg-[#128C55] px-5 py-4 text-base leading-6 text-white transition-all duration-300 ease-out hover:bg-[#128C55]/90"
@@ -194,20 +222,20 @@ import Layout from "@/layouts/Layout.astro";
                 <p>Published 29 Maret 2022 by Mark Manson</p>
               </div>
 
-              <div class="flex items-center gap-6">
+              <div class="flex items-start gap-3 xl:items-center xl:gap-6">
                 <h5 class="w-32 font-bold">ISBN</h5>
 
                 <p>0812997921 (ISBN13: 9780812997927)</p>
               </div>
 
               <div class="space-y-3">
-                <div class="flex items-start gap-6">
+                <div class="flex items-start gap-3 xl:gap-6">
                   <h5 class="w-32 font-bold">Edition Language</h5>
 
                   <p>English and Bahasa</p>
                 </div>
 
-                <div class="flex items-start gap-6">
+                <div class="flex items-start gap-3 xl:gap-6">
                   <h5 class="w-32 font-bold">Other Editions (3)</h5>
 
                   <div class="flex items-start gap-1.5">
@@ -233,8 +261,10 @@ import Layout from "@/layouts/Layout.astro";
           </div>
         </section>
 
-        <section class="col-span-4">
-          <h3 class="mb-5 font-arvo text-[34px] font-normal leading-none">
+        <section class="col-span-1 xl:col-span-4">
+          <h3
+            class="mb-4 font-arvo text-2xl font-normal leading-7 xl:mb-5 xl:text-[34px] xl:leading-none"
+          >
             Similar Books
           </h3>
 
