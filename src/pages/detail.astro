@@ -2,17 +2,32 @@
 import Layout from "@/layouts/Layout.astro";
 ---
 
+<script>
+  const readMore_btn = document.querySelector("#read-more");
+  const wrapperDesc_article = document.querySelector("#wrapper-desc");
+
+  readMore_btn.addEventListener("click", () => {
+    wrapperDesc_article.classList.toggle("line-clamp-5");
+
+    if (wrapperDesc_article.classList.contains("line-clamp-5")) {
+      readMore_btn.innerHTML = "Baca Selengkapnya";
+    } else if (!wrapperDesc_article.classList.contains("line-clamp-5")) {
+      readMore_btn.innerHTML = "Ringkas Deskripsi";
+    }
+  });
+</script>
+
 <Layout title="Detail Blog">
   <main class="relative min-h-screen w-full pb-10 pt-20 xl:pb-16 xl:pt-28">
     <div class="container mx-auto max-w-screen-xl px-4 xl:px-12">
       <div class="relative grid grid-cols-1 gap-10 xl:grid-cols-12">
         <section
-          class="relative col-span-1 flex min-h-screen items-start gap-8 xl:col-span-8"
+          class="relative col-span-1 flex min-h-screen flex-row items-start gap-8 xl:col-span-8"
         >
           <section
             class="hidden w-full flex-col items-center gap-5 xl:sticky xl:left-0 xl:top-24 xl:flex"
           >
-            <div class="relative h-auto w-full">
+            <div class="relative h-auto w-full min-w-[12.5rem]">
               <img
                 class="h-full w-full object-cover"
                 src="/book-photo-5.png"
@@ -140,7 +155,7 @@ import Layout from "@/layouts/Layout.astro";
               by <a class="hover:underline" href="/">Mark Manson</a>
             </p>
 
-            <div class="flex items-center gap-1.5">
+            <div class="hidden items-center gap-1.5">
               <div class="flex items-center gap-1">
                 {
                   [1, 2, 3, 4, 5].map((item) => {
@@ -180,7 +195,7 @@ import Layout from "@/layouts/Layout.astro";
             </div>
 
             <div
-              class="hidden items-center gap-3 border-b border-[#dcdcdc] pb-8 xl:flex"
+              class="hidden items-center gap-3 border-b border-[#dcdcdc] pb-8 xl:hidden"
             >
               <a
                 href="/"
@@ -204,60 +219,143 @@ import Layout from "@/layouts/Layout.astro";
               </a>
             </div>
 
-            <div class="Description text-base text-[#515151]">
+            <div
+              class="Description text-base xl:border-t xl:border-stone-300 xl:pt-4"
+            >
               <h5
                 class="font-arvo text-lg font-bold leading-[34px] text-[#212121]"
               >
                 About this edition
               </h5>
 
-              <p class="font-semibold leading-6">
-                In its broadest sense, fantasy comprises works by many writers,
-                artists, filmmakers, and musicians, from ancient myths and
-                legends to many recent works embraced by a wide audience today.
-              </p>
+              <article
+                id="wrapper-desc"
+                class="line-clamp-5 space-y-5 text-base font-normal leading-7 text-stone-500"
+              >
+                <p>
+                  Dongeng anak-anak yang dibacakan oleh orang tua kini memang
+                  mulai ditinggalkan, alasannya adalah kesibukan. Padahal
+                  sebenarnya mendongeng merupakan kegiatan positif yang bisa
+                  mengeratkan hubungan orangtua dan anak. Sebenarnya mendongeng
+                  merupakan kegiatan positif yang bisa mengeratkan hubungan ibu
+                  dan anak. Anak juga menginginkan orang tuanya meluangkan waktu
+                  untuk membacakan cerita anak sebelum mereka tidur, terutama
+                  oleh sang ibu. Berikut ini 10 Manfaat Dongeng Bagi
+                  Perkembangan Anak yang harus orangtua ketahui:
+                </p>
 
-              <div class="mb-5 mt-6 space-y-3">
-                <p>Hardcover, 378 pages</p>
-                <p>Published 29 Maret 2022 by Mark Manson</p>
-              </div>
+                <p>
+                  1. Cara mengembangkan daya imajinasi anak
+                  <br />
+                  2. Meningkatkan Keterampilan berbahasa
+                  <br />
 
-              <div class="flex items-start gap-3 xl:items-center xl:gap-6">
-                <h5 class="w-32 font-bold">ISBN</h5>
+                  3. Membangkitkan minat baca
+                  <br />
 
-                <p>0812997921 (ISBN13: 9780812997927)</p>
-              </div>
+                  4. Membangun kecerdasan emosional
+                  <br />
 
-              <div class="space-y-3">
-                <div class="flex items-start gap-3 xl:gap-6">
-                  <h5 class="w-32 font-bold">Edition Language</h5>
+                  5. Membentuk rasa empati
+                  <br />
 
-                  <p>English and Bahasa</p>
-                </div>
+                  6. Menambah wawasan dan nilai moral
+                  <br />
 
-                <div class="flex items-start gap-3 xl:gap-6">
-                  <h5 class="w-32 font-bold">Other Editions (3)</h5>
+                  7. Melatih daya ingat
+                  <br />
 
-                  <div class="flex items-start gap-1.5">
-                    <img
-                      class="h-auto w-10"
-                      src="/book-photo-5.png"
-                      alt="Book photo 5"
-                    />
-                    <img
-                      class="h-auto w-10"
-                      src="/book-photo-5.png"
-                      alt="Book photo 5"
-                    />
-                    <img
-                      class="h-auto w-10"
-                      src="/book-photo-5.png"
-                      alt="Book photo 5"
-                    />
-                  </div>
-                </div>
-              </div>
+                  8. Mempererat hubungan orang tua dan anak
+                  <br />
+
+                  9. Membangun keterampilan mendengarkan pada anak
+                  <br />
+
+                  10. Membantu anak memiliki pola tidur yang sehat
+                </p>
+
+                <p>Sinopsis</p>
+
+                <p>
+                  Buku ini menceritakan mengenai 60 lebih kisah tentang binatang
+                  yang unik, lucu, seru, dan menggemaskan. Ceritanya yang
+                  menghibur, dilengkapi dengan pesan moral di setiap akhir
+                  cerita yang sangat memotivasi anak. Selamat membaca dan
+                  mendengarkan dongeng adik-adik.
+                </p>
+              </article>
+
+              <button
+                id="read-more"
+                class="text-base font-semibold hover:underline"
+              >
+                Baca Selengkapnya
+              </button>
             </div>
+
+            <section class="relative pt-8">
+              <h5
+                class="font-arvo text-lg font-bold leading-[34px] text-[#212121]"
+              >
+                Details
+              </h5>
+
+              <ul class="w-full space-y-4">
+                <li class="grid w-full grid-cols-2">
+                  <div class="space-y-0.5">
+                    <h5 class="text-sm font-bold text-stone-500">
+                      Jumlah Halaman
+                    </h5>
+                    <p class="text-base">208.0</p>
+                  </div>
+
+                  <div class="space-y-0.5">
+                    <h5 class="text-sm font-bold text-stone-500">Penerbit</h5>
+                    <a href="/" class="text-base text-[#128C55] hover:underline"
+                      >Gramedia Widiasarana Indonesia</a
+                    >
+                  </div>
+                </li>
+
+                <li class="grid w-full grid-cols-2">
+                  <div class="space-y-0.5">
+                    <h5 class="text-sm font-bold text-stone-500">
+                      Tanggal Terbit
+                    </h5>
+                    <p class="text-base">15 Mar 2020</p>
+                  </div>
+
+                  <div class="space-y-0.5">
+                    <h5 class="text-sm font-bold text-stone-500">Berat</h5>
+                    <p class="text-base">0.3 kg</p>
+                  </div>
+                </li>
+
+                <li class="grid w-full grid-cols-2">
+                  <div class="space-y-0.5">
+                    <h5 class="text-sm font-bold text-stone-500">ISBN</h5>
+                    <p class="text-base">9786020523835</p>
+                  </div>
+
+                  <div class="space-y-0.5">
+                    <h5 class="text-sm font-bold text-stone-500">Lebar</h5>
+                    <p class="text-base">17.0 cm</p>
+                  </div>
+                </li>
+
+                <li class="grid w-full grid-cols-2">
+                  <div class="space-y-0.5">
+                    <h5 class="text-sm font-bold text-stone-500">Bahasa</h5>
+                    <p class="text-base">Indonesia</p>
+                  </div>
+
+                  <div class="space-y-0.5">
+                    <h5 class="text-sm font-bold text-stone-500">Panjang</h5>
+                    <p class="text-base">24.0cm</p>
+                  </div>
+                </li>
+              </ul>
+            </section>
           </div>
         </section>
 
