@@ -27,7 +27,7 @@ import Layout from "@/layouts/Layout.astro";
           <section
             class="hidden w-full flex-col items-center gap-5 xl:sticky xl:left-0 xl:top-24 xl:flex"
           >
-            <div class="relative h-auto w-full min-w-[12.5rem]">
+            <div class="relative h-auto w-full min-w-[12.5rem] max-w-[12.5rem]">
               <img
                 class="h-full w-full object-cover"
                 src="/book-photo-5.png"
@@ -230,9 +230,9 @@ import Layout from "@/layouts/Layout.astro";
 
               <article
                 id="wrapper-desc"
-                class="line-clamp-5 space-y-5 text-base font-normal leading-7 text-stone-500"
+                class="line-clamp-5 text-base font-normal leading-7 text-stone-500 [&>*]:inline [&>*]:text-justify"
               >
-                <p>
+                <div>
                   Dongeng anak-anak yang dibacakan oleh orang tua kini memang
                   mulai ditinggalkan, alasannya adalah kesibukan. Padahal
                   sebenarnya mendongeng merupakan kegiatan positif yang bisa
@@ -242,9 +242,10 @@ import Layout from "@/layouts/Layout.astro";
                   untuk membacakan cerita anak sebelum mereka tidur, terutama
                   oleh sang ibu. Berikut ini 10 Manfaat Dongeng Bagi
                   Perkembangan Anak yang harus orangtua ketahui:
-                </p>
-
-                <p>
+                </div>
+                <br />
+                <br />
+                <div>
                   1. Cara mengembangkan daya imajinasi anak
                   <br />
                   2. Meningkatkan Keterampilan berbahasa
@@ -272,22 +273,27 @@ import Layout from "@/layouts/Layout.astro";
                   <br />
 
                   10. Membantu anak memiliki pola tidur yang sehat
-                </p>
+                </div>
 
-                <p>Sinopsis</p>
+                <br />
+                <br />
 
-                <p>
+                <div class="font-bold">Sinopsis</div>
+
+                <br />
+
+                <div>
                   Buku ini menceritakan mengenai 60 lebih kisah tentang binatang
                   yang unik, lucu, seru, dan menggemaskan. Ceritanya yang
                   menghibur, dilengkapi dengan pesan moral di setiap akhir
                   cerita yang sangat memotivasi anak. Selamat membaca dan
                   mendengarkan dongeng adik-adik.
-                </p>
+                </div>
               </article>
 
               <button
                 id="read-more"
-                class="text-base font-semibold hover:underline"
+                class="mt-4 text-base font-semibold hover:underline"
               >
                 Baca Selengkapnya
               </button>
