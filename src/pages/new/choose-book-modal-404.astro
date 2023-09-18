@@ -1,0 +1,150 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<script>
+  //-----------------------------------------------------------------------------//
+  const modal_chooseBook = document.querySelector("#modal_choose-book");
+  const modal_chooseBook_overlay = document.querySelector(
+    "#modal_choose-book #overlay"
+  );
+  modal_chooseBook_overlay.addEventListener("click", () => {
+    if (modal_chooseBook.classList.contains("flex")) {
+      modal_chooseBook.classList.remove("flex");
+      modal_chooseBook.classList.add("hidden");
+    }
+  });
+  //-----------------------------------------------------------------------------//
+</script>
+
+<Layout title="Choose Book Modal">
+  <div class="relative min-h-screen">
+    <!-- Modal Pilih Buku -->
+    <div
+      id="modal_choose-book"
+      class="fixed inset-0 z-[999999999] flex h-full w-full items-center justify-center"
+    >
+      <!-- overlay -->
+      <div id="overlay" class="fixed inset-0 z-10 h-full w-full bg-black/50">
+      </div>
+
+      <!-- content -->
+      <div
+        class="relative z-20 h-full max-h-[576px] w-full max-w-4xl overflow-hidden rounded-2xl bg-white p-11"
+      >
+        <!-- if 404 use mb-6 otherwise mb-14 -->
+        <header class="mb-6 flex flex-col items-center">
+          <h1 class="mb-2 font-arvo text-[34px] leading-none text-[#2e2e2e]">
+            Pilih Buku
+          </h1>
+
+          <p class="mb-5 text-base font-normal leading-6 text-[#636363]">
+            Kami menampilkan sesuai kategori yang kamu pilih.
+          </p>
+
+          <div class="relative w-full max-w-sm">
+            <svg
+              class="absolute left-6 top-1/2 z-10 h-6 w-6 -translate-y-1/2"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M5 10C5 6.691 7.691 4 11 4C14.309 4 17 6.691 17 10C17 13.309 14.309 16 11 16C7.691 16 5 13.309 5 10ZM21.707 19.293L17.312 14.897C18.366 13.542 19 11.846 19 10C19 5.589 15.411 2 11 2C6.589 2 3 5.589 3 10C3 14.411 6.589 18 11 18C12.846 18 14.542 17.366 15.897 16.312L20.293 20.707C20.488 20.902 20.744 21 21 21C21.256 21 21.512 20.902 21.707 20.707C22.098 20.316 22.098 19.684 21.707 19.293Z"
+                fill="#8D8D8D"></path>
+            </svg>
+
+            <input
+              type="text"
+              class="w-full rounded-full border border-[#dedede] py-2 pl-16"
+              placeholder="Cari judul buku sesuai kategori..."
+            />
+          </div>
+        </header>
+
+        <!-- search 404 -->
+        <section class="flex flex-col items-center justify-center gap-6">
+          <img
+            class="h-auto w-48"
+            src="/ill-no-book-search.png"
+            alt="Illustration no book"
+          />
+
+          <h5 class="text-center font-bold">
+            Oopss! Buku yang kamu cari tidak ada <br />
+            di kategori ini. Coba cari dengan judul lain.
+          </h5>
+        </section>
+
+        <!-- search found / initial list -->
+        <section class="hidden">
+          <div
+            class="grid w-full grid-cols-7 place-items-center justify-center gap-6"
+          >
+            {
+              [1, 2, 3, 4, 5, 6, 7].map((item) => {
+                return (
+                  <div>
+                    <input
+                      type="checkbox"
+                      id={`checkbox item-${item}`}
+                      value={`item-${item}`}
+                      class="checkbox peer hidden"
+                    />
+
+                    <label
+                      for={`checkbox item-${item}`}
+                      class="w-full cursor-pointer font-normal peer-checked:font-semibold [&>img]:shadow-sm peer-checked:[&>img]:shadow-2xl"
+                    >
+                      <figure class="relative space-y-3">
+                        <img
+                          class="h-auto w-full"
+                          src="/choose-book-1.png"
+                          alt="Choose Book 1"
+                        />
+
+                        <h5 class="pointer-events-none text-sm leading-5">
+                          The Subtle Art of Not Giving A
+                        </h5>
+                      </figure>
+                    </label>
+                  </div>
+                );
+              })
+            }
+          </div>
+        </section>
+
+        <div
+          class="absolute bottom-0 left-0 z-10 flex h-28 w-full flex-row items-center justify-between bg-[#FCFAF7] px-14 py-8"
+        >
+          <div class="print-values">
+            <h5
+              id="valueList"
+              class="text-base font-bold leading-5 text-[#141414]"
+            >
+              0 Buku dipilih
+            </h5>
+          </div>
+
+          <div class="flex flex-row gap-4">
+            <button
+              class="rounded-full border border-[#222222] bg-white px-6 py-4 text-base font-bold leading-5 text-[#222222]"
+            >
+              Sebelumnya
+            </button>
+
+            <button
+              id="next-btn"
+              class="cursor-pointer rounded-full bg-[#72D1A6] px-6 py-4 text-base font-bold leading-5 text-white disabled:cursor-auto"
+            >
+              Selanjutnya
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
