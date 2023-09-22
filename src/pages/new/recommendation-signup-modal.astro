@@ -3,12 +3,27 @@ import Layout from "@/layouts/Layout.astro";
 ---
 
 <script>
+  //-----------------------------------------------------------------------//
   let modal_signup = document.querySelector("#modal-signup");
+  //-----------------------------------------------------------------------//
   let close_icon = document.querySelector("#close-icon");
 
   close_icon.addEventListener("click", () => {
-    modal_signup.classList.add("hidden");
+    if (modal_signup.classList.contains("flex")) {
+      modal_signup.classList.remove("flex");
+      modal_signup.classList.add("hidden");
+    }
   });
+  //-----------------------------------------------------------------------//
+  let close_overlay = document.querySelector("#close-overlay");
+
+  close_overlay.addEventListener("click", () => {
+    if (modal_signup.classList.contains("flex")) {
+      modal_signup.classList.remove("flex");
+      modal_signup.classList.add("hidden");
+    }
+  });
+  //-----------------------------------------------------------------------//
 </script>
 
 <Layout title="Recommendation Signup Modal">
@@ -19,7 +34,7 @@ import Layout from "@/layouts/Layout.astro";
       class="fixed inset-0 z-[99999999] flex h-full w-full items-center justify-center"
     >
       <div
-        id="close-icon"
+        id="close-overlay"
         class="absolute inset-0 z-0 h-full w-full bg-black/50"
       >
       </div>
@@ -58,7 +73,7 @@ import Layout from "@/layouts/Layout.astro";
         </h3>
 
         <div
-          class="relative z-10 h-[calc(100vh_-_113px)] bg-white/95 px-6 pt-20 lg:h-auto lg:rounded-b-2xl lg:pb-14 lg:pt-11"
+          class="relative z-10 h-[calc(100vh_-_113px)] bg-white/95 px-6 pt-11 lg:h-auto lg:rounded-b-2xl lg:pb-14 lg:pt-11"
         >
           <img
             class="absolute left-1/2 top-1/2 h-auto w-full -translate-x-1/2 -translate-y-1/2"

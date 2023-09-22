@@ -3,13 +3,13 @@ import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout title="Author">
-  <main class="author relative mt-20 min-h-screen pb-20 pt-7">
+  <main class="author relative mt-14 min-h-screen pb-10 pt-7 lg:mt-20 lg:pb-20">
     <div
-      class="author container relative mx-auto grid max-w-screen-xl grid-cols-12 gap-8 px-12"
+      class="author container relative mx-auto grid max-w-screen-xl grid-cols-1 gap-8 px-5 lg:grid-cols-12 lg:px-12"
     >
       <!-- Author - Photo & Share -->
       <section
-        class="photo-share sticky left-0 top-24 col-span-3 flex h-full min-h-screen flex-col items-center space-y-8"
+        class="photo-share col-span-1 flex h-full flex-col items-center space-y-8 lg:sticky lg:left-0 lg:top-24 lg:col-span-3 lg:min-h-screen"
       >
         <!-- Photo -->
         <div class="relative h-60 w-60 overflow-hidden rounded-xl shadow-2xl">
@@ -21,10 +21,10 @@ import Layout from "@/layouts/Layout.astro";
         </div>
 
         <!-- Share -->
-        <div class="flex flex-col items-center gap-4">
+        <div class="flex flex-col items-center gap-2 lg:gap-4">
           <h5 class="text-base">Share</h5>
 
-          <div class="flex flex-col items-center gap-6">
+          <div class="flex flex-row items-center gap-6 lg:flex-col">
             <!-- Twitter -->
             <a href="/">
               <svg
@@ -124,7 +124,7 @@ import Layout from "@/layouts/Layout.astro";
       </section>
 
       <!-- Author - Detail -->
-      <section class="detail col-span-9">
+      <section class="detail col-span-1 lg:col-span-9">
         <!-- Heading -->
         <h1 class="mb-6 font-arvo text-[34px] leading-none">Yusuf Fikri</h1>
 
@@ -147,7 +147,12 @@ import Layout from "@/layouts/Layout.astro";
             {
               [1, 2, 3, 4, 5].map((item) => {
                 return (
-                  <figure class="flex flex-row items-start gap-6 border-b border-[#DCDCDC] pb-6 last:border-b-0">
+                  <figure class="group relative flex flex-row items-start gap-6 border-b border-[#DCDCDC] pb-6 last:border-b-0">
+                    <a
+                      href="/"
+                      class="absolute inset-0 z-10 h-full w-full object-cover"
+                    />
+
                     <img
                       class="h-auto w-20"
                       src={`/book-photo-${item}.png`}
@@ -155,7 +160,7 @@ import Layout from "@/layouts/Layout.astro";
                     />
 
                     <div class="space-y-3">
-                      <h5 class="text-lg font-semibold leading-6">
+                      <h5 class="text-lg font-semibold leading-6 group-hover:underline">
                         Sell Yourself to Success In Career and Life
                       </h5>
 
