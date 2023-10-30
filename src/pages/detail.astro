@@ -39,6 +39,17 @@ import Layout from "@/layouts/Layout.astro";
 <Layout title="Detail Blog">
   <main class="relative min-h-screen w-full pb-10 pt-20 xl:pb-16 xl:pt-28">
     <div class="container mx-auto max-w-screen-xl px-4 xl:px-12">
+        <!-- Breadcrumb -->
+        <div class="flex items-center gap-1 text-xs text-[#128C55] mb-6 xl:text-sm">
+          <a class="hover:underline" href="/">Category</a>
+          <span>&gt;</span>
+          <a class="hover:underline" href="http://178.128.54.124/fiksi">Fiksi
+          </a>
+          <span>&gt;</span>
+          <a class="hover:underline truncate w-8/12 xl:w-full" href="http://178.128.54.124/fiksi/conf-english-classics-the-happy-prince-and-other-tales">English Classics: The Happy Prince and Other Tales
+          </a>
+      </div>
+
       <div class="relative grid grid-cols-1 gap-10 xl:grid-cols-12">
         <section
           class="relative col-span-1 flex min-h-screen flex-row items-start gap-8 xl:col-span-8"
@@ -46,7 +57,7 @@ import Layout from "@/layouts/Layout.astro";
           <section
             class="hidden w-full flex-col items-center gap-5 xl:sticky xl:left-0 xl:top-24 xl:flex xl:basis-1/3"
           >
-            <div class="relative h-auto w-full min-w-[12.5rem] max-w-[12.5rem]">
+            <div class="relative h-auto w-full">
               <img
                 class="h-full w-full object-cover"
                 src="https://cdn.jaritelunjuk.com/buku/171/ID_GPU2017MTH01ECTHPAOT_C.jpg"
@@ -439,22 +450,21 @@ import Layout from "@/layouts/Layout.astro";
                 About this edition
               </h5>
 
-              <article
-                id="wrapper-desc"
-                class="line-clamp-5 text-base font-normal leading-7 text-stone-500 [&>*]:inline [&>*]:text-justify"
-              >
-                <div class="font-bold">Sinopsis</div>
+              <article id="wrapper-desc" class="text-base font-normal leading-7 text-stone-500 [&amp;>*]:inline [&amp;>*]:text-justify" style="white-space: pre-line">
+                “It is curious,” he remarked, “but I feel quite warm now, although it is so cold.”
 
-                <br />
+“That is because you have done a good action,” said the Prince.
 
-                <div>
-                  Buku ini menceritakan mengenai 60 lebih kisah tentang binatang
-                  yang unik, lucu, seru, dan menggemaskan. Ceritanya yang
-                  menghibur, dilengkapi dengan pesan moral di setiap akhir
-                  cerita yang sangat memotivasi anak. Selamat membaca dan
-                  mendengarkan dongeng adik-adik.
-                </div>
-              </article>
+"“It is curious,” he remarked, “but I feel quite warm now, although it is so cold.”
+
+“That is because you have done a good action,” said the Prince"
+
+English Classics: The Happy Prince and Other Tales.
+English Classics is literature's collection with particular rooms for increase reader's interest in reading classics.
+This book including The Happy Prince and Other Tales   as one of the collections.
+
+The Happy Prince and Other Tales is an adventure of fantasy world with full of magical story.
+            </article>
 
               <button
                 id="read-more"
