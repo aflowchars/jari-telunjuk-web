@@ -3,10 +3,10 @@ import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout title="Search Result">
-  <main class="relative overflow-hidden pb-10 pt-20 xl:pb-20 xl:pt-32">
+  <main class="relative pb-10 pt-20 xl:pb-20 xl:pt-32">
     <div class="container mx-auto max-w-screen-xl px-4 xl:px-12">
       <div
-        class="relative grid grid-cols-1 gap-10 xl:grid-cols-12 xl:pb-14 xl:pt-10"
+        class="relative min-h-screen grid grid-cols-1 gap-10 xl:grid-cols-12 xl:pb-14 xl:pt-10"
       >
         <section class="col-span-1 xl:col-span-8">
           <h3
@@ -60,7 +60,7 @@ import Layout from "@/layouts/Layout.astro";
           </div>
         </section>
 
-        <section class="col-span-1 xl:col-span-4">
+        <section class="col-span-1 sticky top-24 right-0 xl:col-span-4">
           <h3
             class="mb-6 font-arvo text-2xl leading-7 xl:mb-10 xl:text-[34px] xl:leading-none"
           >
