@@ -31,7 +31,7 @@ import Layout from "@/layouts/Layout.astro";
     <!-- Modal Signup -->
     <div
       id="modal-signup"
-      class="fixed inset-0 z-[99999999] flex h-full w-full items-center justify-center"
+      class="fixed inset-0 z-[99999999] flex h-full max-h-screen w-full items-center justify-center"
     >
       <div
         id="close-overlay"
@@ -96,27 +96,15 @@ import Layout from "@/layouts/Layout.astro";
                 </p>
               </button>
 
-              <button
-                class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4"
-              >
-                <img
-                  class="h-6 w-6"
-                  src="/icon-facebook.png"
-                  alt="Icon facebook"
-                />
-
-                <p class="text-base font-semibold leading-5">
-                  Sign up with Facebook
-                </p>
-              </button>
-
-              <button
-                class="relative flex w-full items-center justify-center gap-3 rounded-full border-2 border-black bg-white py-4"
-              >
-                <img class="h-6 w-6" src="/icon-x.png" alt="Icon x" />
-
-                <p class="text-base font-semibold leading-5">Sign up with X</p>
-              </button>
+              <p class="text-center text-neutral-600">
+                By clicking continue, you agree to our <a
+                  class="underline"
+                  href="/"
+                >
+                  Terms of Service
+                </a> and
+                <a class="underline" href="/privacy-policy"> Privacy Policy.</a>
+              </p>
             </div>
           </div>
         </div>
